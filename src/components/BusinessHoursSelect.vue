@@ -1,5 +1,5 @@
 <template>
-  <select :name="optionName" @change="inputEventHandler" v-model="selected" required oninvalid="this.setCustomValidity('Please select hour or remove it or disable the day')" oninput="setCustomValidity('')">
+  <select :name="optionName" @change="inputEventHandler" v-model="selected" required oninvalid="this.setCustomValidity('Please select hour or remove it or disable the day')" oninput="setCustomValidity('')" class="form-control">
     <option disabled v-show="isFirstRow(index) && onlyOneRow(hours)" value>{{
       defaultText
     }}</option>
