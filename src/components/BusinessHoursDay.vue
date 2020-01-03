@@ -28,7 +28,7 @@
         <transition name="fade">
           <div class="flex-row hours open" role="cell" v-visible="isOpenToday">
             <BusinessHoursSelect
-              v-if="type === 'select'"
+              v-if="type === 'select' && isOpen"
               :name="name"
               :input-num="inputNum('open', index)"
               :total-inputs="totalInputs"
@@ -42,7 +42,7 @@
               @input-change="onChangeEventHandler('open', index, $event)"
             ></BusinessHoursSelect>
             <BusinessHoursDatalist
-              v-if="type === 'datalist'"
+              v-if="type === 'datalist' && isOpen"
               :name="name"
               :input-num="inputNum('open', index)"
               :total-inputs="totalInputs"
@@ -64,7 +64,7 @@
         <transition name="fade">
           <div class="flex-row hours close" role="cell" v-visible="isOpenToday">
             <BusinessHoursSelect
-              v-if="type === 'select'"
+              v-if="type === 'select' && isOpen"
               :name="name"
               :input-num="inputNum('close', index)"
               :total-inputs="totalInputs"
@@ -78,7 +78,7 @@
               @input-change="onChangeEventHandler('close', index, $event)"
             ></BusinessHoursSelect>
             <BusinessHoursDatalist
-              v-if="type === 'datalist'"
+              v-if="type === 'datalist' && isOpen"
               :name="name"
               :input-num="inputNum('close', index)"
               :total-inputs="totalInputs"
