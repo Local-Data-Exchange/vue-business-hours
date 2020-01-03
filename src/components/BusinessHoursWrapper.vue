@@ -97,7 +97,6 @@ export default {
     }
   },
   data() {
-
     const converter = () => {
       const weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
       const randomKey = n => {
@@ -118,8 +117,6 @@ export default {
         } else {
           json[k] = [{open:"", close:"", isOpen: false, id: randomKey(7)}]
         }
-        /* eslint-disable */
-        console.log(json)
         return json;
       }, {});
     }
@@ -131,12 +128,11 @@ export default {
   watch: {
     formatedDays: {
       handler() {
-
         const conv = old => {
-
           let dt = moment(old, 'HHmm');
           return isNaN(dt) ? '': dt.format('HH:mm');
 
+          /* Another way to convert (using regex) */
           // let rx = /(?<h>\d{2})(?<m>\d{2})/;
           // if(rx.test(old)) {
           //   let {h,m} = old.match(rx).groups;
@@ -154,7 +150,6 @@ export default {
           });
           return json;
         }
-
 
         const cond = day => this.formatedDays[day].reduce((bool, item) => (bool && item.isOpen), true);
         let op = Object.keys(this.formatedDays).filter(cond).reduce(format, {});
