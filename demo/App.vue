@@ -39,11 +39,19 @@
         :hourFormat24="true"
       ></business-hours>
     </div>
+    <div class="demo-component wide">
+      <h2>
+        Business Hours with Formated object
+      </h2>
+      {{demoDaysFormated}}
+      <business-hours-formated v-model="demoDaysFormated" :time-increment="15"></business-hours-formated>
+    </div>
   </div>
 </template>
 
 <script>
 import demoDays from './data/demoDays';
+import demoDaysFormated from './data/demoDaysFormated';
 import demoDaysSpanish from './data/demoDaysSpanish';
 import demoHolidays from './data/demoHolidays';
 import demoDaysErrors from './data/demoDaysErrors';
@@ -56,7 +64,8 @@ export default {
       demoDaysSpanish: demoDaysSpanish,
       demoHolidays: demoHolidays,
       demoDaysErrors: demoDaysErrors,
-      demoSpanishLocalization: demoSpanishLocalization
+      demoSpanishLocalization: demoSpanishLocalization,
+      demoDaysFormated: demoDaysFormated
     };
   }
 };
