@@ -1,6 +1,5 @@
 // Import vue components
 import component from './components/BusinessHours.vue';
-import componentFormated from './components/BusinessHoursWrapper.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 
@@ -11,7 +10,6 @@ function install(Vue) {
   if (install.installed) return;
   install.installed = true;
   Vue.component('BusinessHours', component);
-  Vue.component('BusinessHoursFormated', componentFormated);
 }
 
 // Create module definition for Vue.use()
